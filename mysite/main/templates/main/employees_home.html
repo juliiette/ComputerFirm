@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Employees{% endblock %}
+
+{% block content %}
+    <div class="features-list">
+        <h1>Employees</h1>
+        {% for el in employees %}
+            <div class="alert alert-warning">
+                <h3>{{ el.first_name }} {{ el.second_name }}</h3>
+                <p>+{{ el.phone }}</p>
+                <p>{{ el.position_id }}</p>
+                <p>{{ el.salary }}</p>
+
+                <a href="{% url 'employee-detail' el.employee_id %}" class="btn btn-warning">Details</a>
+                <a href="{% url 'employee-delete' el.employee_id %}" class="btn danger">Delete</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

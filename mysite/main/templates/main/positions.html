@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Positions{% endblock %}
+
+{% block content %}
+    <div class="features-list">
+        <h1>Positions</h1>
+        {% for el in positions %}
+            <div class="alert alert-warning">
+                <h3>{{ el.name }}</h3>
+                <p>{{ el.salary }}</p>
+                <p>{{ el.duties }}</p>
+                <p>{{ el.demands }}</p>
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Employee{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ employee.first_name }} {{ employee.second_name }}</h1>
+        <p>{{ employee.birthday }}</p>
+        <p>{{ employee.sex }}</p>
+        <p>{{ employee.address }}</p>
+        <p>{{ employee.phone }}</p>
+        <p>{{ employee.passport }}</p>
+        <p>{{ employee.position_id }}</p>
+
+        <a href="{% url 'employee-update' employee.employee_id %}" class="btn btn-info">Edit</a>
+        <a href="{% url 'employee-delete' employee.employee_id %}" class="btn btn-info">Delete</a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Customers{% endblock %}
+
+{% block content %}
+    <div class="features-list">
+        <h1>Customers</h1>
+        {% for el in customers %}
+            <div class="alert alert-warning">
+                <h3>{{ el.first_name }} {{ el.second_name }}</h3>
+                <p>{{ el.address }}</p>
+                <p>+{{ el.phone }}</p>
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
